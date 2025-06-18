@@ -11,10 +11,11 @@ int main(void)
     char* fecha = getDate();
     //Comandos de Git
     int check = autoCommit(fecha);
+
+    printf(" Commit automático %s completado con éxito.\n", fecha);
+
     free(fecha);
     return check;
-
-
 }
 char* getDate(void) 
 {
