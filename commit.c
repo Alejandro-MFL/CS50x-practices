@@ -5,15 +5,35 @@
 char* getDate(void);
 int autoCommit(char* message);
 
-int main(void)
+int main(int argc, char* argv[])
 {
-    //Obtener fecha y hora
-    char* fecha = getDate();
+    //Comprovacion de si se añade mensaje concreto del commit
+    char* mensaje = NULL;
+    char* fecha = NULL;   
+    mensaje = malloc(100);
+    if (argc > 1)
+    {
+        mensaje = malloc(strlen(argv[1]) + 1);
+        if (mensaje == NULL)
+        {
+            fprintf(stderr, "Error reservando memoria.\n");
+            return 1;
+        }
+        strcpy(mensaje, argv[1]);
+    }
+    else
+    {
+        // Si no, Obtener fecha y hora y usar la de mensaje//
+        fecha = getDate();  
+        mensaje = fecha;
+    }  
+    
     //Comandos de Git
-    int check = autoCommit(fecha);
+    int check = autoCommit(mensaje);
 
-    printf(" Commit automatico %s completado con éxito.\n", fecha);
+    printf(" Commit automatico %s completado con éxito.\n", mensaje);
 
+    free(mensaje);
     free(fecha);
     return check;
 }
