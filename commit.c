@@ -25,7 +25,7 @@ char* getDate(void)
 
     time(&t);
     tm_info = localtime(&t);
-    strftime(fecha, 100, "%Y-%m-%d_%H-%M-%S", tm_info);
+    strftime(fecha, 100, "%d-%m-%Y_%H:%M:%S", tm_info);    
     return fecha;
 }
 
