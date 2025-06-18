@@ -35,7 +35,7 @@ int autoCommit(char* message)
     char addChanges[] = "git add .";
     char commitchanges[200];
     char pushChanges[] = "git push";
-    snprintf(commitchanges, sizeof(commitchanges), "git commit -m \"Auto-commit %s\"", message);
+    snprintf(commitchanges, sizeof(commitchanges), "git commit -m \"Commit: %s\"", message);
     //Los ejecuta
     int checkAdd = system(addChanges);
     if (checkAdd != 0)
