@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
     //Comandos de Git
     int check = autoCommit(mensaje);
 
-    printf(" Commit automatico %s completado con éxito.\n", mensaje);
+    printf(" Commit automatico '%s' completado con éxito.\n", mensaje);
 
     free(mensaje);
     free(fecha);
