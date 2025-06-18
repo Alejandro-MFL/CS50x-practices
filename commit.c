@@ -12,7 +12,7 @@ int main(void)
     //Comandos de Git
     int check = autoCommit(fecha);
 
-    printf(" Commit automático %s completado con éxito.\n", fecha);
+    printf(" Commit automatico %s completado con éxito.\n", fecha);
 
     free(fecha);
     return check;
