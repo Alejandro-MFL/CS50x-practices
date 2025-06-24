@@ -18,15 +18,14 @@ int main(void)
 
 	//Con el tiempo quieres agregar un elemento y no sabes si la memoria colindante esta
 	//ocupada por lo que se crea una nueva memoria con el espacio necesario.
-	int *tmp = malloc(4 * sizeof(int));
-	if (list == NULL)
+	int *tmp = realloc(list, 4 * sizeof(int));
+	if (tmp == NULL)
 	{
+		// es importante que en los return de error se libere la memoria bloqueada
+		free(list);
 		return 1;
 	}
-	for (int i = 0; i < 3; i++)
-	{
-		tmp[i] = list[i];
-	}
+	
 	tmp[3] = 4;
 
 	free(list);
