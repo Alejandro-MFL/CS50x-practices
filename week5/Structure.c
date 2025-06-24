@@ -13,7 +13,7 @@ int main(void)
 	list[1] = 2;
 	list[2] = 3;
 
-	int *tmp = = malloc(4 * sizeof(int));
+	int *tmp = malloc(4 * sizeof(int));
 	if (list == NULL)
 	{
 		return 1;
@@ -22,7 +22,16 @@ int main(void)
 	{
 		tmp[i] = list[i];
 	}
-	tmp[3] = 4
+	tmp[3] = 4;
 
 	free(list);
+
+	list = tmp;
+
+	for (int i = 0; i < 4; i++) 
+	{
+		printf("%i\n", list[i]);
+	}
+
+
 }
