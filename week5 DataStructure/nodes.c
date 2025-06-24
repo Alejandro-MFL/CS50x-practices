@@ -8,6 +8,7 @@ typedef struct node
 } node;
 
 void printList(node *current);
+int addNodes(node **origen, int newInt);
 
 int main(void)
 {
@@ -15,19 +16,37 @@ int main(void)
 
 	for (int i = 0; i < 3; i++)
 	{
-		node *n = malloc(sizeof(node));
-		if (n == NULL)
+		int check = addNodes(&list, i);
+		if (check != 0) 
 		{
-			return 1;
+			return check;
 		}
-		n->number = i;
-		n->next = list;
-		list = n;		
 	}
 
+	int check = addNodes(&list, 9);
+	if (check != 0)
+	{
+		return check;
+	}
+	
 	printList(list);
 	return 0;
 }
+
+int addNodes(node **origen, int newInt)
+{
+	node *n = malloc(sizeof(node));
+	if (n == NULL)
+	{
+		return 1;
+	}
+	n->number = newInt;
+	n->next = *origen;
+	*origen = n;
+	return 0;
+}
+
+
 
 void printList(node *current) 
 {
