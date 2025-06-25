@@ -14,7 +14,7 @@ const int ASCIIMIN = 97;
 
 int hash(char* character);
 int addNodes(node** origen, char* newChar);
-void freeMemo(node* list);
+void freeMemo(node* list[]);
 void freeList(node* current);
 
 int main(void)
@@ -24,10 +24,11 @@ int main(void)
 	int index = hash(word);
 	if (index > 26) 
 	{
-		return index // no es una palabra o hay problemas con la palabra
+		return index; // no es una palabra o hay problemas con la palabra
 	}	
 	addNodes(&table[index],word);
-	printf("p: % i\n", table[index]->character);
+	printf("char: %s\n", table[index]->character);
+	printf("index: %i\n", index);
 	free(table);
 }
 
@@ -57,23 +58,24 @@ int hash(char* character)
 	}
 	else if (c < 97)
 	{
-		character += ASCIIMAYUS;
+		c += ASCIIMAYUS;
 	}
-	return character - ASCIIMIN;
+
+	return c - ASCIIMIN;
 }
 
-void freeMemo(node* list) 
+void freeMemo(node* list[]) 
 {
 	for (int i = 0; i < 26; i++)
 	{
-		if (list[i] != NULL)
+		if (list[i]->character != NULL)
 		{
 			freeList(list[i]);
 		}
 	}	
 }
 
-void freeList(node* current)
+void freeList(node *current)
 {
 	if (current->next != NULL)
 	{
