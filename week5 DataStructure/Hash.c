@@ -20,18 +20,14 @@ void freeList(node* current);
 int main(void)
 {
 	char* word = "hola";
-	node* table[26] = malloc(26,sizeof(node));
+	node* table[26] = { NULL };
 	int index = hash(word);
-	if (index = 28) 
+	if (index > 26) 
 	{
-		return 1 // no es una palabra
-	}
-
-	
-	addNodes(table[index],word);		
-	
-	
-
+		return index // no es una palabra o hay problemas con la palabra
+	}	
+	addNodes(&table[index],word);
+	printf("p: % i\n", table[index]->character);
 	free(table);
 }
 
@@ -50,11 +46,16 @@ int addNodes(node** origen, char* newChar)
 
 int hash(char* character)
 {
-	if (character < 65) 
+	if (character == NULL || character[0] == '\0')
 	{
 		return 28;
+	}		
+	char c = character[0];
+	if (c < 65)
+	{
+		return 29;
 	}
-	else if (character < 97)
+	else if (c < 97)
 	{
 		character += ASCIIMAYUS;
 	}
@@ -65,12 +66,11 @@ void freeMemo(node* list)
 {
 	for (int i = 0; i < 26; i++)
 	{
-		if (list[i].character != NULL)
+		if (list[i] != NULL)
 		{
 			freeList(list[i]);
 		}
-	}
-	free(list);
+	}	
 }
 
 void freeList(node* current)
