@@ -9,6 +9,22 @@ typedef struct node
 	struct node* next;
 }
 node;
+const int ASCIIMAYUS = 32;
+const int ASCIIMIN = 97;
 
-node* table[26];
+int hash(char* character);
 
+int main(void)
+{
+	node* table[26] = malloc(26,sizeof(node));
+}
+
+
+int hash(char* character)
+{
+	if (character < 97)
+	{
+		character += ASCIIMAYUS;
+	}
+	return character - ASCIIMIN;
+}
