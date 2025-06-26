@@ -19,7 +19,7 @@ void freeList(node* current);
 
 int main(void)
 {
-	char* word = "hola";
+	char* word = "Alegria";
 	node* table[26] = { NULL };
 	int index = hash(word);
 	if (index > 26) 
