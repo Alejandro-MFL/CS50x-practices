@@ -1,6 +1,30 @@
 import sys
 import csv
 
+#Ejemplo de class, es relativamente nuevo respecto a C pero muy similar a las class que usaba en C#. self es nuevo
+#Init es un similar awake y le da los valores deseados, y se le pueden añadir distintas funciones
+
+class Student():
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+    
+    def changeID(self,id):
+        self.id = id
+
+    def print(self):
+        print("{} - {}".format(self.name, self.id))
+
+
+a = Student("a",1)
+a.print()
+a.changeID(2)
+a.print()
+
+
+
+
+
 #Es un mero ejemplo de modificacion de archivos desde un .py
 #es un ejemplo para poder desarrollar y extrapolar
 def writeInFile():
