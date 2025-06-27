@@ -1,5 +1,5 @@
 answer = input("what's your name? ")
-print("hello, {answer}")
+print(f"hello, {answer}")
 
 x = int(input("x = "))
 y = int(input("y = "))
