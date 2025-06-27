@@ -5,11 +5,14 @@ def main():
     print(f"hello, {answer}")
 
     #Prueba de comparadores de int con if
-    x = int(input("x = "))
-    y = int(input("y = "))
+    #try es muy interesante, expandir conocimiento sobre ello
+    try:    
+        x = float(input("x = "))
+        y = float(input("y = "))
+        numComparator(x, y)
+    except ValueError:
+        print("Need numbers")  
 
-    numComparator(x, y)
-    
     #Comparadores de string con in    
     agreed()
         
@@ -19,9 +22,12 @@ def main():
 
     #bucles de while y for
     meaw(3)
+    return 0
 
-def numComparator(x, y):
-    if isinstance(x, int) and isinstance(x, int) or isinstance(x, float) and isinstance(x, float):            
+#Fin de main y declarafion de funciones
+def numComparator(x, y):  
+         
+    if isinstance(x, int) and isinstance(x, int) or isinstance(x, float) and isinstance(x, float):              
         if x < y:
             print("x is less than y")
         elif x > y:
