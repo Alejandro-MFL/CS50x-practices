@@ -52,15 +52,13 @@ def checkArgv():
 def countKey():
     with open("favorites.csv","r") as file:
         reader = csv.DictReader(file)
-        scratch, c, python = 0, 0, 0
+        count= {}                
         for row in reader:
-            if row["language"] == "Scratch":
-                scratch += 1
-            elif row["language"] == "Python":
-                python += 1
-            elif row["language"] == "C":
-                c += 1
-    
-    print(f"Scratch = {scratch}")
-    print(f"Python = {python}")
-    print(f"C = {c}")
+            favorite = row["language"]
+            if favorite in count:
+                count[favorite] += 1
+            else:
+                count[favorite] = 1
+
+    for favorite in count:
+        print(f"{favorite}: {count[favorite]}")
