@@ -61,6 +61,6 @@ def countKey():
                 count[favorite] = 1
 #Sorted organiza elementos iterables, alfabeticamente o numericamente principalmente
 #si se le añade otro parametro key, puedes elegir el criterio 
-# (count, key=counts.get) Aqui cogeria los valores de la key y los organizaria de menos a mas
-    for favorite in sorted(count):
+# (count, key=counts.get) Aqui cogeria los valores de la key y los organizaria de menos a mas, si le añades reverse=True va al reves
+    for favorite in sorted(count, key=count.get, reverse=True):
         print(f"{favorite}: {count[favorite]}")
