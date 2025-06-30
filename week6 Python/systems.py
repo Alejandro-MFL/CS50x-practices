@@ -47,3 +47,16 @@ def checkArgv():
     #  si no se le da valor toma 0 (Exito como en C), tambien se le puede dar un str que saldria como mensaje mas codigo 1  
     print(f"hello, {sys.argv[1]}")
     exit (0)
+
+#Ejemplo de lerctura de csv
+def countKey():
+    with open("favorites.csv","r") as file:
+        reader = csv.DictReader(file)
+        scratch, c, python = 0, 0, 0
+        for row in reader:
+            if row["language"] == "Scratch":
+                scratch += 1
+            elif row["language"] == "Python":
+                python += 1
+            elif row["language"] == "C":
+                c += 1
