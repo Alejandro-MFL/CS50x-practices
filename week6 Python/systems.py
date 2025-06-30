@@ -60,3 +60,7 @@ def countKey():
                 python += 1
             elif row["language"] == "C":
                 c += 1
+    
+    print(f"Scratch = {scratch}")
+    print(f"Python = {python}")
+    print(f"C = {c}")
