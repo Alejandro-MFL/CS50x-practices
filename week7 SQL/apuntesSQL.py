@@ -49,3 +49,5 @@
 #Ejemplo de SELECT con multiples modificaciones:
     #SELECT * FROM clientes WHERE ciudad = 'Madrid' AND id < 70;
     #SELECT * FROM clientes WHERE (ciudad = 'Madrid' or ciudad = 'Barcelona') AND correo LIKE '%gmail.com';
+    #SELECT ciudad, COUNT(*) AS n FROM clientes GROUP BY ciudad ORDER BY n DESC LIMIT 4;
+        #DESC descendiente ASC ascendente
