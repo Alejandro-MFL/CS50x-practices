@@ -45,9 +45,19 @@
     ('Ana García', 'ana@example.com'),
     ('Luis Pérez', 'luis@example.com');
     """
+    #Las columnas no rellenas tendran el valor de NULL
+
+#Ejemplo de modificacion de datos con UPDATE:
+    #UPDATE clientes SET correo = 'nuevo@email.com' WHERE nombre = 'Ana García';
+
+#Ejemplo de eleminar datos
+    #DELETE FROM clientes WHERE ciudad IS NOT NULL;
 
 #Ejemplo de SELECT con multiples modificaciones:
     #SELECT * FROM clientes WHERE ciudad = 'Madrid' AND id < 70;
     #SELECT * FROM clientes WHERE (ciudad = 'Madrid' or ciudad = 'Barcelona') AND correo LIKE '%gmail.com';
     #SELECT ciudad, COUNT(*) AS n FROM clientes GROUP BY ciudad ORDER BY n DESC LIMIT 4;
         #DESC descendiente ASC ascendente
+
+#Crear una copia de seguridad
+    #.backup 'clientes_backup.db'
