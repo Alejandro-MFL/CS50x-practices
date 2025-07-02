@@ -32,7 +32,8 @@
 #Ejemplo de crear tablas
     #Se pueden vincular tablas con PRYMARY y FOREIGN(PRIMARY KEY se puede usar ade una)
         #Con JOIN pueden unirse para que salgan juntas:
-            #SELECT * FROM clientes JOIN consumidores ON clientes.id = consumidores.show_id
+            #SELECT * FROM clientes JOIN consumidores ON clientes.id = consumidores.show_id;
+            #los muestra una al lado de la otra
 """ 
     Crear tablas
     CREATE TABLE clientes (
