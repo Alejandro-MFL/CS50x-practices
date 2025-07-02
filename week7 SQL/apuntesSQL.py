@@ -31,6 +31,7 @@
 #Para mediciones de tiempos
     #.timer ON
 
+
 #Ejemplo de crear tablas
     #Se pueden vincular tablas con PRYMARY y FOREIGN(PRIMARY KEY se puede usar ade una)
         #Con JOIN pueden unirse para que salgan juntas:
@@ -53,6 +54,16 @@
 
     )
     """
+
+#Index, sirve para mejorar la eficiencia de procesamiento
+    #CREATE INDEX title_index ON clientes (correo);
+    #CREATE UNIQUE INDEX para que no se dubliquen 
+        # Implicaciones: crea un indice dentro del archivo con forma de binaria para busquedas mas rapidas,
+            # Contras un mayor gasto de espacio en el archivo, como un mayor costo al modificar las listas 
+                #INSERT, UPDATE o DELETE
+            # Al permitir busquedas binarias todas las queries son exponencialmente mas eficientes respecto al tamaño
+                #WHERE, JOIN, ORDER BY, o GROUP BY
+
 #Ejemplo de insercion de datos:
 """
     -- Insertar datos de ejemplo
