@@ -1,14 +1,30 @@
 import sqlite3
 
 db = sqlite3.connect("clientes.db")
+#Esta parte evita que los datos sean tuplas para que sean diccionarios
 db.row_factory = sqlite3.Row
 cursor = db.cursor()
 
-querie = input("¿Que ciudad? ")
-cursor.execute("SELECT COUNT(*) AS n FROM clientes WHERE ciudad = ?",(querie,))
+def askCiudad():
+    querie = input("¿Que ciudad? ")
 
-row = cursor.fetchone()
+    cuantos(querie)
+    quienes(querie)
+    
+def cuantos(ciudad):
+    #Se añade la informacion como tupla, de ahí la coma al final
+    cursor.execute("SELECT Count(*) AS n FROM clientes WHERE ciudad = ?",(ciudad,))
+    #Se usa fetchone por ser uno con Count*, si no usariamos fetchmany(x) para x filas
+    linea = cursor.fetchone()
+    print(linea[0])
 
-print(row[0])
+def quienes(ciudad):
+    cursor.execute("SELECT * FROM clientes WHERE ciudad = ?",(ciudad,))
+    
+    rows = cursor.fetchall()
+    for row in rows:
+        print(dict(row))
+
+askCiudad()        
 
 db.close()
