@@ -28,6 +28,8 @@
     #dflt_value	Valor por defecto (si tiene alguno)
     #pk	¿Es clave primaria? (1 = sí, 0 = no)
 
+#Para mediciones de tiempos
+    #.timer ON
 
 #Ejemplo de crear tablas
     #Se pueden vincular tablas con PRYMARY y FOREIGN(PRIMARY KEY se puede usar ade una)
