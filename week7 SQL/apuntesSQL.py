@@ -2,7 +2,7 @@
 
 #Para importar elementos de un csv, es necesario primero ".mode csv", si se hace manualmente creando las tablas, 
     #la primera linea sera usada como elemento de la tabla
-    """
+"""
     .mode csv
     .import clientes.csv clientes
     """
@@ -30,16 +30,28 @@
 
 
 #Ejemplo de crear tablas
-    """ 
+    #Se pueden vincular tablas con PRYMARY y FOREIGN(PRIMARY KEY se puede usar ade una)
+        #Con JOIN pueden unirse para que salgan juntas:
+            #SELECT * FROM clientes JOIN consumidores ON clientes.id = consumidores.show_id
+""" 
     Crear tablas
     CREATE TABLE clientes (
-        id INTEGER PRIMARY KEY,
+        id INTEGER,
         nombre TEXT,
-        correo TEXT
+        tiempo NUMERIC,
+        correo TEXT,
+        PRIMARY KEY (ID)
     ); 
+    
+    CREATE TABLE consumidor (
+        show_id INTEGER NOT NULL,
+        money REAL NOT NULL,
+        FOREIGN KEY(show_id) REFERENCES shows(id)
+
+    )
     """
 #Ejemplo de insercion de datos:
-    """
+"""
     -- Insertar datos de ejemplo
     INSERT INTO clientes(nombre, correo) VALUES
     ('Ana García', 'ana@example.com'),
