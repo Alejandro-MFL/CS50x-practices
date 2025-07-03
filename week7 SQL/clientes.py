@@ -13,6 +13,8 @@ def askCiudad():
     
 def cuantos(ciudad):
     #Se añade la informacion como tupla, de ahí la coma al final
+#Esto es muy importante, siempre se ha de inserta asi datos de una querie para evitar inyecciones queda descartado
+    #f-strings, + o .format(), tambien se podrian validar manualmente.
     cursor.execute("SELECT Count(*) AS n FROM clientes WHERE ciudad = ?",(ciudad,))
     #Se usa fetchone por ser uno con Count*, si no usariamos fetchmany(x) para x filas
     linea = cursor.fetchone()
