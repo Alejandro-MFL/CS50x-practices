@@ -45,10 +45,50 @@
         <input type="submit" value="Google Search">
     </form>
     <!-- Ejemplo de input para registrar emails-->
-    <form >
+    <form>
         <input autocomplete="off" autofocus name="email" placeholder="Email" type="email">
         <button>Register</button>
     </form>
+
+    <!--
+    REGULAR EXPRESSION
+
+    Caracteres Básicos
+        .	Cualquier carácter excepto salto de línea
+        \d	Dígito (0-9)
+        \D	No dígito
+        \w	Letra, número o _
+        \W	Cualquier cosa que no sea letra, número o _
+        \s	Espacio, tabulación o salto de línea
+        \S	No espacio
+    Cuantificadores
+        *	0 o más repeticiones
+        +	1 o más repeticiones
+        ?	0 o 1 repetición (opcional)
+        {n}	Exactamente n repeticiones
+        {n,}	Al menos n repeticiones
+        {n,m}	Entre n y m repeticiones
+    Anclas
+        ^	Inicio de la cadena
+        $	Final de la cadena
+        \b	Límite de palabra
+        \B	No-límite de palabra
+    Conjuntos y Rangos
+        [abc]	a, b o c
+        [^abc]	Cualquier carácter excepto a, b, c
+        [a-z]	Letras minúsculas de la a a la z
+        [A-Z]	Letras mayúsculas de la A a la Z
+        [0-9]	Dígitos del 0 al 9
+        [A-Za-z0-9]	Letras y números
+    Grupos y Alternancia
+        (abc)	Grupo que coincide con abc
+        `(a	b)`
+        (?:abc)	Grupo sin captura
+        (?=abc)	Lookahead positivo (seguido de abc)
+        (?!abc)	Lookahead negativo (no seguido de abc)
+
+    -->
+
 
 </body>
 </html>
