@@ -1,0 +1,26 @@
+sort1 uses: bubble sort
+
+How do you know?: It's the fastest under the best conditions, when the lists are most organized and shortest.
+When this isn't the case, its performance is at its worst.
+(Es el mas rapido en las mejores condiciones, cuando mas ordenadas esten ya las listas y mas cortas sean estas.
+Cuando no es así su desempeño es el peor.)
+
+sort2 uses: merge sort
+
+How do you know?: It's by far the fastest at running ramdow5000.It's also the only one that spends more time in sys
+than in user, since merge spends the most time managing copies and the least time looping.
+(Es el mas rapido por mucho en ejecutar ramdow5000. Ademas es el unico que tiene mas tiempo en sys que en user,
+ya que merge es el que mas gasta manejando copias y el que menos tiempo pasa haciendo bucles.)
+
+sort3 uses:  selection sort
+
+How do you know?: Selection, whether conditions are favorable or not, takes very similar times. Sorted5000 vs. Reversed5000,
+the times are the same; it is not affected by whether sorted is already sorted. It is much slower than merge in complex cases,
+and just as slow in favorable cases.
+
+(Selection si las condiciones son favorables o no, su tiempo es muy similar, en sorted5000 vs reversed5000,
+los tiempos son los mismos, no se ve afectado por que sorted este ya ordenado. Mucho mas lento que merge en casos complejos
+y es igual de lento en los casos favorables.)
+
+My level of written English is much worse than the reading, it is poor so I have translated it with Google Translate.
+
