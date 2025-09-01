@@ -75,7 +75,7 @@ void sortAndMerge(int array[], int left, int mid, int right)
         }
         k++;
     }
-    // En caso de que uno de los arrays sea más grande porque la lista sea impar se copia el resto,
+    // En caso de que uno de los arrays sea mï¿½s grande porque la lista sea impar se copia el resto,
     // que al estar ordenado el ultimo sera mas alto.
 
     while (i < lengthLeft)

@@ -1,0 +1,17 @@
++------------+-------------+------------------+
+| avg_energy | avg_valence | avg_danceability |
++------------+-------------+------------------+
+| 0.65906    | 0.484443    | 0.71646          |
++------------+-------------+------------------+
+
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+- Withered but danceable
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+- En español:
+    La media aritmetica no es un valor util cuando las muestras son asimetricas, la escucha de musica depende del contexto y de
+    las emociones por lo que escuchar un grupo con valores extremos facilmente distorsionaria el valor, usar valores como la mediana
+    o la moda tendrian mejor representatividad.
+- In English translated with Google Translate:
+    The arithmetic mean is not a useful value when samples are skewed. Music listening depends on context and emotions,
+    so listening to a group with extreme values would easily distort the value.
+    Using values like the median or mode would be more representative.

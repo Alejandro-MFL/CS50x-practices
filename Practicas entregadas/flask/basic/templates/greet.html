@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+
+{% block header %}
+
+    <h1>Hi,
+        {% if name %}
+            {{ name }}
+        {% else %}
+            dude
+        {% endif %}
+    </h1>
+
+{% endblock %}

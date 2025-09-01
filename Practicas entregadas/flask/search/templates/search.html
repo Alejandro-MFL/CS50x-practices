@@ -1,0 +1,25 @@
+{% extends "layout.html"%}
+
+{% block header %}
+
+    <h1>Search</h1>
+
+{% endblock %}
+
+{% block main %}
+
+   <ul>
+        {% for song in songs %}
+            <li>{{ song.name     }}</li>
+        {% endfor %}
+   </ul>
+
+
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% endblock %}
+

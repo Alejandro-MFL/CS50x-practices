@@ -1,0 +1,32 @@
+{% extends "layout.html"%}
+
+{% block header %}
+
+    <h1>Register</h1>
+
+{% endblock %}
+
+{% block main %}
+
+    <form method="post">
+        <input autocomplete="off" autofocus required name = "name" placeholder="Name" type="text">
+        <select name="sports" required>
+            <!--esta opcion se usa para poner un "placeholder", una opcion por defecto no seleccionable-->
+            <option disabled selected value="">Sports</option>
+            {% for sport in sports %}
+            <option value="{{sport}}">{{sport}}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Register</button>
+    </form>
+
+
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% endblock %}
+

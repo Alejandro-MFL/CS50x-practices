@@ -1,0 +1,57 @@
+{% extends "layout.html"%}
+
+{% block header %}
+
+    <h1>Search</h1>
+
+{% endblock %}
+
+{% block main %}
+
+
+    <input autocomplete="off" autofocus placeholder="Query" type="search">
+    <!--Lista vacia que será rellenada desde script-->
+    <ul></ul>
+
+    <script>
+        //la ventaja de usar un JSON es que no alteras el fronted, solo envia los datos. Tambien evita inyecciones de codigo al meter solo datos.
+        let input = document.querySelector('input');
+        input.addEventListener('input', async function() {
+            let response = await fetch('/search?q=' + input.value);
+            let songs = await response.json();
+            let html = '';
+            for (let song of songs) {
+                html += '<li>' + song.name + '</li>';
+            }
+             document.querySelector('ul').innerHTML = html;
+        })
+
+
+        /* Esto era el programa previo que no usabe JSON
+
+        //Busca el primer elemento <input> en el DOM
+        let input = document.querySelector('input');
+        // addEventListener desencadena la funcion cada vez que hay un cambio en input,
+        //  de forma async, para que puedas usar await.
+        input.addEventListener('input', async function() {
+            // fletch() envia una solicitudd "GET" a la direccion solicitada
+            let response = await fetch('/search?q=' + input.value);
+            // response.text() es por que fletch recibe un html, si fuera un Json tendria que ser .json en vez de text
+            let songs = await response.text();
+            // accede al primer contenido ul de esta pagina y con innerHTML lo cambiamos a shows
+            document.querySelector('ul').innerHTML = songs;
+
+        })
+        */
+
+    </script>
+
+
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% endblock %}
+

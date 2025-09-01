@@ -1,0 +1,39 @@
+{% extends "layout.html"%}
+
+{% block header %}
+
+    <h1>Registrants</h1>
+
+{% endblock %}
+
+{% block main %}
+{% if user %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sport</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registrant in registrants %}
+                <tr>
+                    <td>{{ registrant.name }}</td>
+                    <td>{{ registrant.sport }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    You are logged in, {{ user }}. <a href="/logout">Log out</a>
+
+{% else %}
+    You are not logged in. <a href="/login">Log in</a>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% endblock %}
